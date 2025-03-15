@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interfaz con Barra de Menú e Imágenes</title>
+    <!-- Importando Bootstrap desde CDN -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos de Materialize -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        /* Estilos para las imágenes y etiquetas */
+        .image-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .image-item {
+            text-align: center;
+        }
+        .image-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        .menu-user-info {
+            min-width: 150px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Menú -->
+         <nav class="navbar navbar-expand-lg navbar-light bg-primary">
+        <a class="navbar-brand" href="#" style="padding-left: 10px;">Mi Ruta Segura</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="4_PaginaPpal_ok.html">Inicio</a>
+                </li>
+                <!-- Dropdown Empresa -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="empresaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Empresa
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="empresaDropdown">
+                        <a class="dropdown-item" href="5_DatosEmpresa_ok.html">Registrar</a> <!-- Enlace agregado -->
+                        <a class="dropdown-item" href="#">Actualizar</a>
+                        <a class="dropdown-item" href="#">Ver</a>
+                    </div>
+                </li>
+                <!-- Dropdown Empleados -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="empleadosDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Empleados
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="empleadosDropdown">
+                        <a class="dropdown-item" href="6_DatosEmpleados_ok.html">Crear</a> <!-- Enlace agregado -->
+                        <a class="dropdown-item" href="#">Modificar</a>
+                        <a class="dropdown-item" href="#">Consultar</a>
+                    </div>
+                </li>
+                <!-- Dropdown Normatividad -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="normatividadDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Normatividad
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="normatividadDropdown">
+                        <a class="dropdown-item" href="#">Decreto</a>
+                        <a class="dropdown-item" href="#">Ley</a>
+                        <a class="dropdown-item" href="#">Resolucion</a>
+
+                        <a class="dropdown-item" href="#">Norma</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tutoriales">Tutoriales</a>
+                </li>
+                <!-- Icono de Notificaciones -->
+                <li class="nav-item">
+                    <a href="#!" class="nav-link" title="Notificaciones">
+                        <i class="material-icons">notifications</i>
+                    </a>
+                </li>
+                <!-- Menú desplegable del usuario -->
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">account_circle</i>
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                        <a class="dropdown-item" href="#!">Perfil: Clara Restrepo</a>
+                        <a class="dropdown-item" href="1_Inicio_ok.html">Cerrar Sesión</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    
+    <br><br><br>
+    <!-- Contenedor de Imágenes con Etiquetas -->
+    <div class="container">
+        <div class="image-container">
+            <!-- Planear1.png -->
+            <div class="image-item">
+                <span>Planear</span>
+                <img src="Planear1.png" alt="Planear1">
+            </div>
+            <!-- Hacer2.png -->
+            <div class="image-item">
+                <span>Hacer</span>
+                <img src="Hacer2.png" alt="Hacer2">
+            </div>
+            <!-- Verificar3.png -->
+            <div class="image-item">
+                <span>Verificar</span>
+                <img src="Verificar3.png" alt="Verificar3">
+            </div>
+            <!-- Actuar.png -->
+            <div class="image-item">
+                <span>Actuar</span>
+                <img src="Actuar.png" alt="Actuar">
+            </div>
+            <!-- Empleados.png -->
+            <div class="image-item">
+                <span>Empleados</span>
+                <img src="Empleados.png" alt="Empleados">
+            </div>
+        </div>
+    </div>
+
+    <!-- Importando Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

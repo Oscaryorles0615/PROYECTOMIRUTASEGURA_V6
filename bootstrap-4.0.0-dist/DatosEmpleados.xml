@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<empleados>
+    <empleado>
+        <nombres>Clara Inés</nombres>
+        <apellidos>Restrepo Muñoz</apellidos>
+        <numeroDocumento>43750439</numeroDocumento>
+        <genero>Femenino</genero>
+        <fechaNacimiento>1976-01-27</fechaNacimiento>
+        <edad>48</edad>
+        <rh>A+</rh>
+        <rh>email</rh>
+        <tipoContrato>Indefinido</tipoContrato>
+        <profesion>Ingeniero</profesion>
+        <escolaridad>Universitario</escolaridad>
+        <ocupacion>Desarrollador</ocupacion>
+        <salario>12.000.000</salario>
+        <eps>Sura</eps>
+        <afp>Colpatria</afp>
+        <arl>Colpatria</arl>
+        <nivelRiesgo>III</nivelRiesgo>
+        <fechaInicio>1996-01-01</fechaInicio>
+        <pais>Colombia</pais>
+        <ciudad>Medellín</ciudad>
+        <departamento>Antioquia</departamento>
+        <direccion>Santa Elena, Diagonal 24 Este 1BB 741</direccion>
+        <telefono>3108341265</telefono>
+    </empleado>
+    <empleado>
+        <nombres>Oscar Ivan</nombres>
+        <apellidos>Osorio Niño</apellidos>
+        <numeroDocumento>80083223</numeroDocumento>
+        <genero>Masculino</genero>
+        <fechaNacimiento>1979-17-12</fechaNacimiento>
+        <edad>45</edad>
+        <rh>A+</rh>
+        <tipoContrato>Indefinido</tipoContrato>
+        <profesion>Ingeniero</profesion>
+        <escolaridad>Universitario</escolaridad>
+        <ocupacion>Desarrollador</ocupacion>
+        <salario>12.000.000</salario>
+        <eps>Salud Total</eps>
+        <afp>Protección</afp>
+        <arl>Liberty</arl>
+        <nivelRiesgo>III</nivelRiesgo>
+        <fechaInicio>1998-02-01</fechaInicio>
+        <pais>Colombia</pais>
+        <ciudad>Bogotá</ciudad>
+        <departamento>Cundinamarca</departamento>
+        <direccion>Avenida 80 No 15-20</direccion>
+        <telefono>3505320282</telefono>
+    </empleado>
+    <empleado>
+        <nombres>Maritza Farley</nombres>
+        <apellidos>Mondragón Guzmán</apellidos>
+        <numeroDocumento>42555555</numeroDocumento>
+        <genero>Femenino</genero>
+        <fechaNacimiento>1980-05-02</fechaNacimiento>
+        <edad>44</edad>
+        <rh>A+</rh>
+        <tipoContrato>Indefinido</tipoContrato>
+        <profesion>Ingeniero de Sistemas</profesion>
+        <escolaridad>Universitario</escolaridad>
+        <ocupacion>Manager</ocupacion>
+        <salario>20.000.000</salario>
+        <eps>Salud Total</eps>
+        <afp>Protección</afp>
+        <arl>Liberty</arl>
+        <nivelRiesgo>III</nivelRiesgo>
+        <fechaInicio>1998-02-01</fechaInicio>
+        <pais>Colombia</pais>
+        <ciudad>Ibague</ciudad>
+        <departamento>Tolima</departamento>
+        <direccion>Regional Tolima - Centro de Industria y Construcción</direccion>
+        <telefono>3166267299</telefono>
+    </empleado>
+</empleados>

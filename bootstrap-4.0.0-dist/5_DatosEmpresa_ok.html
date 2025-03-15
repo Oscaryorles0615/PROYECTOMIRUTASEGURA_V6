@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Empresa</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-image: url('PaginaInicio.png');
+            background-size: cover; /* Hace que la imagen cubra todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Ocupa el 100% del viewport */
+            margin: 0; /* Elimina el margen por defecto del body */
+        }
+
+        .form-control {
+            background-color: #f0f0f0; /* Gris claro */
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider {
+            background-color: orange;
+        }
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Datos de Empresa</h2>
+        <div class="d-flex justify-content-end mb-4">
+            <a href="4_PaginaPpal_ok.html" class="btn btn-primary mr-2">Regresar</a>
+            <a href="#" class="btn btn-primary" onclick="buscar()">Buscar</a>
+        </div>
+        <form id="empresaForm">
+            <div class="row mb-3">
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <label for="razonSocial">Razón Social:</label>
+                        <input type="text" class="form-control" id="razonSocial">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tipoCliente">Tipo Contribuyente:</label>
+                        <select class="form-control" id="tipoContribuyente">
+                            <option value="">Selecciona tipo Contribuyente</option>
+                            <option value="personaJuridica">Persona Juridica</option>
+                            <option value="personaNatural">Persona Natural</option>
+                    </select>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tipoDocumento">Tipo de Identificacion Tributaria:</label>
+                        <select class="form-control" id="tipoIdentificacion">
+                            <option value="">Selecciona tipo de identificacion tributaria</option>
+                            <option value="Nit">Nit</option>
+                            <option value="Cedula">Cedula</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="numeroDocumento">Numero de Identificacion Tributaria</label>
+                        <input type="text" class="form-control" id="numeroIdentificacion">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tamaño">Tamaño:</label>
+                        <select class="form-control" id="Tamaño">
+                            <option value="">Selecciona el Tamaño de la Empresa</option>
+                            <option value="Pequeña">Pequeña</option>
+                            <option value="Mediana">Mediana</option>
+                            <option value="Grande">Grande</option>    
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="actividadEconomica">Actividad Economica:</label>
+                        <input type="text" class="form-control" id="actividadEconomica">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="representanteLegal">Nombre del Representante Legal:</label>
+                        <input type="text" class="form-control" id="representanteLegal">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="sitioWeb">Sitio WEB:</label>
+                        <input type="text" class="form-control" id="sitioWeb">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fechaAfiliacion">Fecha Afiliación ARL:</label>
+                        <input type="date" class="form-control" id="fechaAfiliacion">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="arl">ARL:</label>
+                        <input type="text" class="form-control" id="arl">
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Pais">Pais:</label>
+                        <select class="form-control" id="actividadEconomica">
+                            <option value="">Seleccione un Pais</option>
+                            <option value="Colombia">Colombia</option>
+                            <option value="Ecuador">Ecuador</option>
+                            <option value="Peru">Peru</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="departamento">Departamento:</label>
+                        <select class="form-control" id="pais">
+                            <option value="">Selecciona un Departamento</option>
+                            <option value="bogota">Bogota</option>
+                            <option value="antioquia">Antioquia</option>
+                            <option value="nariño">Nariño</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ciudad">Ciudad:</label>
+                        <select class="form-control" id="ciudad">
+                            <option value="">Selecciona la ciudad</option>
+                            <option value="bogota">Bogota</option>
+                            <option value="santaelena">Santa Elena</option>
+                            <option value="ipiales">Ipiales</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="empleadosDirectos">Empleados Directos:</label>
+                        <input type="number" class="form-control" id="empleadosDirectos" min="0">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="empleadosTemporales">Empleados Temporales:</label>
+                        <input type="number" class="form-control" id="empleadosTemporales" min="0">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="numeroTrabajadores">Número de Trabajadores:</label>
+                        <select class="form-control" id="numeroTrabajadores">
+                            <option value="">Selecciona una opción</option>
+                            <option value="1-10">1 a 10 trabajadores</option>
+                            <option value="11-50">11 a 50 trabajadores</option>
+                            <option value="51oMasTrabajadores">51 o Mas Trabajadores</option>
+                        </select>
+                    </div>
+                </div>
+            </div>    
+
+            <div class="row mb-3">    
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="estadoEmpresa">Estado de la Empresa:</label>
+                        <select class="form-control" id="estadoEmpresa">
+                            <option value="">Selecciona el Estado de la Empresa</option>
+                            <option value="Activa">Activa</option>
+                            <option value="Inactiva">Inactiva</option>
+                        </select>
+                    </div>
+                </div>      
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nivelRiesgo">Nivel de Riesgo:</label>
+                        <select class="form-control" id="nivelRiesgo">
+                            <option value="">Selecciona una opción</option>
+                            <option value="I-II-III">I-II-III</option>
+                            <option value="IV">IV</option>
+                            <option value="IV-V">IV-V</option>
+                            <option value="V">V</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="form-group">
+                    <label>Tiene Grupo Económico:</label><br>
+                    <label class="switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        function buscar() {
+            const numeroDocumento = document.getElementById('numeroDocumento').value;
+            const razonSocial = document.getElementById('razonSocial').value;
+
+            // Aquí puedes agregar la lógica de búsqueda según los datos ingresados
+            console.log(`Buscando por: Número de Documento: ${numeroDocumento}, Razón Social: ${razonSocial}`);
+        }
+    </script>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
