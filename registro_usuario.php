@@ -43,15 +43,12 @@
 </head>
 <body>
 
+<form action="" method="POST">
     <div class="container register-container shadow-sm">
-    <form action="" method="POST" class="formulario">
-        <h5 class="text-center">REGISTRO</h5>
-        <?php
-        include("conexion_bd.php");
-        include("registrar_usuario.php");
-        ?>
+    <h5 class="text-center">REGISTRO</h5>
+
         <div class="form-row">
-            <form class="col-12" id="registerForm">
+            <form method="POST" class="col-12" id="registerForm">
                 <!-- Campo de Nombre Completo -->
                 <div class="form-group col-12">
                     <label for="fullname">Nombre</label>
@@ -93,10 +90,30 @@
                     <p><a href="1_Inicio_ok.html">¿Ya tienes cuenta? Iniciar Sesión</a></p>
                 </div>
             </form>
-        </div>
-    </form>        
+        </div>  
     </div>
+</form>
+<?php
 
+$servidor="localhost";
+$usuario="root";
+$clave="";
+$bd="COORDIFRONTERAS";
+
+$conexion=new mysqli($servidor, $usuario, $clave, $bd);
+
+$Nombre=$_POST['Nombre'];
+$Correo=$_POST['Correo'];
+$Usuario=$_POST['Usuario'];
+$Contraseña=$_POST['Contraseña'];
+
+if (iseet($_POST['Registrarse'])) {
+    $insertar="INSERT INTO REGISTRO (Nombre, Correo, Usuario, Contraseña) VALUES('$Nombre' , '$Correo' , '$Usuario' , '$Contraseña')";
+    $mysqli_query($conexion, $insertar);        
+}            
+    
+?>
+            
     <!-- Importando Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>

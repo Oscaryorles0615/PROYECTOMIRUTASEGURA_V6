@@ -9,10 +9,10 @@ include("conexion_bd.php");
             strlen($_POST['Usuario']) >= 1 &&
             strlen($_POST['Contraseña']) >= 1 
             ) {
-                $Nombre = trim($_POST['Nombre'];
-                $Correo = trim($_POST['Correo'];
-                $Usuario = trim($_POST['Usuario'];
-                $Contraseña = trim($_POST['Contraseña'];
+                $Nombre = trim($_POST['Nombre']);
+                $Correo = trim($_POST['Correo']);
+                $Usuario = trim($_POST['Usuario']);
+                $Contraseña = trim($_POST['Contraseña']);
                 $consulta = " INSERT INTO REGISTRO(Nombre, Correo, Usuario, Contraseña)
                     VALUES('$Nombre' , '$Correo' , '$Usuario' , '$Contraseña')";
                 $resultado = mysqli_query($conex, $consulta);
