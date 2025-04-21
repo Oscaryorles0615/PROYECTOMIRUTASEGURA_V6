@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario Registro de Empleados</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        fieldset {
+            margin-bottom: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+        legend {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Registro de Empleados</h2>
+    <form id="registroForm">
+        <fieldset>
+            <legend>Información Personal</legend>
+            <label for="nombres">Nombres:</label>
+            <input type="text" id="nombres" name="nombres">
+            <label for="apellidos">Apellidos:</label>
+            <input type="text" id="apellidos" name="apellidos">
+            <label for="numeroDocumento">No. Documento:</label>
+            <input type="text" id="numeroDocumento" name="numeroDocumento">
+            <label for="genero">Género:</label>
+            <select id="genero" name="genero">
+                <option value="masculino">Masculino</option>
+                <option value="femenino">Femenino</option>
+                <option value="otro">Otro</option>
+            </select>
+            <label for="fechaNacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fechaNacimiento" name="fechaNacimiento">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" name="edad">
+            <label for="rh">RH:</label>
+            <input type="text" id="rh" name="rh">
+        </fieldset>
+
+        <fieldset>
+            <legend>Información Laboral</legend>
+            <label for="tipoContrato">Tipo de Contrato:</label>
+            <input type="text" id="tipoContrato" name="tipoContrato">
+            <label for="profesion">Profesión:</label>
+            <input type="text" id="profesion" name="profesion">
+            <label for="escolaridad">Escolaridad:</label>
+            <input type="text" id="escolaridad" name="escolaridad">
+            <label for="ocupacion">Ocupación:</label>
+            <input type="text" id="ocupacion" name="ocupacion">
+            <label for="salario">Salario:</label>
+            <input type="number" id="salario" name="salario">
+            <label for="eps">EPS:</label>
+            <input type="text" id="eps" name="eps">
+            <label for="afp">AFP:</label>
+            <input type="text" id="afp" name="afp">
+            <label for="arl">ARL:</label>
+            <input type="text" id="arl" name="arl">
+            <label for="nivelRiesgo">Nivel de Riesgo:</label>
+            <input type="text" id="nivelRiesgo" name="nivelRiesgo">
+            <label for="fechaInicio">Fecha de Inicio:</label>
+            <input type="date" id="fechaInicio" name="fechaInicio">
+        </fieldset>
+
+        <fieldset>
+            <legend>Contacto</legend>
+            <label for="pais">País:</label>
+            <input type="text" id="pais" name="pais">
+            <label for="ciudad">Ciudad:</label>
+            <input type="text" id="ciudad" name="ciudad">
+            <label for="departamento">Departamento:</label>
+            <input type="text" id="departamento" name="departamento">
+            <label for="direccion">Dirección:</label>
+            <input type="text" id="direccion" name="direccion">
+            <label for="telefono">Teléfono:</label>
+            <input type="tel" id="telefono" name="telefono">
+        </fieldset>
+    </form>
+
+    <script>
+        // Función para simular la carga de datos desde el XML
+        function cargarDatosDesdeXML() {
+            const xmlData = `
+                <?xml version="1.0" encoding="UTF-8"?>
+                <empleado>
+                    <nombres>Juan</nombres>
+                    <apellidos>Pérez</apellidos>
+                    <numeroDocumento>123456789</numeroDocumento>
+                    <genero>masculino</genero>
+                    <fechaNacimiento>1990-01-01</fechaNacimiento>
+                    <edad>34</edad>
+                    <rh>O+</rh>
+                    <tipoContrato>Indefinido</tipoContrato>
+                    <profesion>Ingeniero</profesion>
+                    <escolaridad>Universitario</escolaridad>
+                    <ocupacion>Desarrollador</ocupacion>
+                    <salario>3000000</salario>
+                    <eps>Sura</eps>
+                    <afp>Colpatria</afp>
+                    <arl>Colpatria</arl>
+                    <nivelRiesgo>Bajo</nivelRiesgo>
+                    <fechaInicio>2024-01-01</fechaInicio>
+                    <pais>Colombia</pais>
+                    <ciudad>Bogotá</ciudad>
+                    <departamento>Cundinamarca</departamento>
+                    <direccion>Calle 1 No 2-3</direccion>
+                    <telefono>3001234567</telefono>
+                </empleado>
+            `;
+
+            // Parsear el XML simulado
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlData, "application/xml");
+
+            // Asignar los valores a los campos del formulario
+            document.getElementById("nombres").value = xmlDoc.getElementsByTagName("nombres")[0].textContent;
+            document.getElementById("apellidos").value = xmlDoc.getElementsByTagName("apellidos")[0].textContent;
+            document.getElementById("numeroDocumento").value = xmlDoc.getElementsByTagName("numeroDocumento")[0].textContent;
+            document.getElementById("genero").value = xmlDoc.getElementsByTagName("genero")[0].textContent;
+            document.getElementById("fechaNacimiento").value = xmlDoc.getElementsByTagName("fechaNacimiento")[0].textContent;
+            document.getElementById("edad").value = xmlDoc.getElementsByTagName("edad")[0].textContent;
+            document.getElementById("rh").value = xmlDoc.getElementsByTagName("rh")[0].textContent;
+            document.getElementById("tipoContrato").value = xmlDoc.getElementsByTagName("tipoContrato")[0].textContent;
+            document.getElementById("profesion").value = xmlDoc.getElementsByTagName("profesion")[0].textContent;
+            document.getElementById("escolaridad").value = xmlDoc.getElementsByTagName("escolaridad")[0].textContent;
+            document.getElementById("ocupacion").value = xmlDoc.getElementsByTagName("ocupacion")[0].textContent;
+            document.getElementById("salario").value = xmlDoc.getElementsByTagName("salario")[0].textContent;
+            document.getElementById("eps").value = xmlDoc.getElementsByTagName("eps")[0].textContent;
+            document.getElementById("afp").value = xmlDoc.getElementsByTagName("afp")[0].textContent;
+            document.getElementById("arl").value = xmlDoc.getElementsByTagName("arl")[0].textContent;
+            document.getElementById("nivelRiesgo").value = xmlDoc.getElementsByTagName("nivelRiesgo")[0].textContent;
+            d

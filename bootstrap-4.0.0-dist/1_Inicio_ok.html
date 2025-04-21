@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>iniciosesion</title>
+    <title>Iniciar Sesión</title>
     <!-- Importando Bootstrap desde CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Iconos de Materialize -->
@@ -55,17 +55,13 @@
 <body>
 
     <div class="container login-container shadow-sm">
-    <form method="POST" action="">    
         <h2 class="text-center">Mi Ruta Segura</h2><br>
-        <?php
-        include("conexionbd.php");
-        include("controlador.php");
-        ?>                 
+                             
         <div class="form-row">
             <form class="col-12">
                 <!-- Campo de correo electrónico -->
                 <div class="form-group col-12">
-                    <label for="email">CorreoElectrónico</label>
+                    <label for="email">Correo Electrónico</label>
                     <input id="email" type="email" class="form-control" required>
                 </div>
 
@@ -101,7 +97,6 @@
                 </div>
             </form>
         </div>
-    </form>
     </div>
 
     <!-- Importando Bootstrap JS -->

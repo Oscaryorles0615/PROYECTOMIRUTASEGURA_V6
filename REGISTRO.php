@@ -1,9 +1,20 @@
+<?php
+
+$servidor = "localhost:3306";
+$usuario = "root";
+$clave = "";
+$bd = "COORDIFRONTERAS";
+
+$enlace = mysqli_connect ($servidor, $usuario, $clave, $bd);
+
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>REGISTRO</title>
+    <title>Registrar usuario</title>
     <!-- Importando Bootstrap desde CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Iconos de Materialize -->
@@ -43,12 +54,12 @@
 </head>
 <body>
 
-<form action="" method="POST">
+    <form action="#" name="COORDIFRONTERAS" method="POST">    
     <div class="container register-container shadow-sm">
-    <h5 class="text-center">REGISTRO</h5>
-
+        <h5 class="text-center">Registrate</h5>
+        
         <div class="form-row">
-            <form method="POST" class="col-12" id="registerForm">
+            <form class="col-12" id="registerForm">
                 <!-- Campo de Nombre Completo -->
                 <div class="form-group col-12">
                     <label for="fullname">Nombre</label>
@@ -61,12 +72,6 @@
                     <input id="email" type="email" class="form-control" required>
                 </div>
 
-                <!-- Campo de Correo Electrónico -->
-                <div class="form-group col-12">
-                    <label for="email">Usuario</label>
-                    <input id="text" type="text" class="form-control" required>
-                </div>
-
                 <!-- Campo de Contraseña con ícono de ojo -->
                 <div class="form-group col-12">
                     <label for="password">Contraseña</label>
@@ -74,6 +79,19 @@
                         <input id="password" type="password" class="form-control" required>
                         <div class="input-group-append">
                             <span class="input-group-text password-toggle" onclick="togglePassword('password')">
+                                <i class="material-icons">visibility</i>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Campo de Confirmación de Contraseña con ícono de ojo -->
+                <div class="form-group col-12">
+                    <label for="confirm-password">ConfirmarContraseña</label>
+                    <div class="input-group">
+                        <input id="confirm-password" type="password" class="form-control" required>
+                        <div class="input-group-append">
+                            <span class="input-group-text password-toggle" onclick="togglePassword('confirm-password')">
                                 <i class="material-icons">visibility</i>
                             </span>
                         </div>
@@ -90,30 +108,9 @@
                     <p><a href="1_Inicio_ok.html">¿Ya tienes cuenta? Iniciar Sesión</a></p>
                 </div>
             </form>
-        </div>  
+        </div>
     </div>
-</form>
-<?php
 
-$servidor="localhost";
-$usuario="root";
-$clave="";
-$bd="COORDIFRONTERAS";
-
-$conexion=new mysqli($servidor, $usuario, $clave, $bd);
-
-$Nombre=$_POST['Nombre'];
-$Correo=$_POST['Correo'];
-$Usuario=$_POST['Usuario'];
-$Contraseña=$_POST['Contraseña'];
-
-if (iseet($_POST['Registrarse'])) {
-    $insertar="INSERT INTO REGISTRO (Nombre, Correo, Usuario, Contraseña) VALUES('$Nombre' , '$Correo' , '$Usuario' , '$Contraseña')";
-    $mysqli_query($conexion, $insertar);        
-}            
-    
-?>
-            
     <!-- Importando Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
@@ -159,5 +156,27 @@ if (iseet($_POST['Registrarse'])) {
             }
         }
     </script>
+    </form>
 </body>
 </html>
+
+<?php
+
+    if(isset($_POST['Registrarse'])){
+
+        $fullname= $_POST ['nombre'];
+        $email= $_POST ['correo'];
+        $password= $_POST ['contraseña'];
+        
+        $insertarDatos = " INSERT INTO REGISTRO VALUES('$fullname','$email','$password')";
+
+
+        $ejecutarInsertar = mysqli_query ($enlace,$insertarDatos);
+
+    }
+
+?>
+
+
+
+

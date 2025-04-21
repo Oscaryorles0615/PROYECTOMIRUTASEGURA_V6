@@ -1,0 +1,123 @@
+!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Normatividad</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('PaginaInicio.png');
+            background-size: cover; /* Hace que la imagen cubra todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Ocupa el 100% del viewport */
+            margin: 0; /* Elimina el margen por defecto del body */
+        }
+        
+        /* Estilo para los campos de entrada */
+        .form-control {
+            background-color: #f8f9fa; /* Gris claro */
+        }
+        /* Estilo para las secciones */
+        .section-header {
+            background-color: #e9ecef; /* Color de fondo para secciones */
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Botón Regresar en la parte superior derecha -->
+        <div class="d-flex justify-content-end mt-5">
+           <a href="4_PaginaPpal_ok.html" class="btn btn-primary mr-2">Regresar</a>
+           <a href="https://www.funcionpublica.gov.co/eva/gestornormativo/norma.php?i=72173" class="btn btn-primary float-right">Consultar</a>
+        </div>
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Decretos">DECRETOS</label>
+                        <select class="form-control" id="Decretos">
+                            <option value="">Selecciona una opción</option>
+                            <option value="decreto1072">Decreto 1072 de 2015</option>
+                            <option value="decreto052">Decreto 052 de 2017</option>
+                            <option value="decreto1563">Decreto 1563 de 2016</option>
+                            <option value="decreto472">Decreto 472 de 2015</option>
+                            <option value="decreto1443">Decreto 1443 de 2014</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Leyes">LEYES</label>
+                        <select class="form-control" id="Leyes">
+                            <option value="">Selecciona una opción</option>
+                            <option value="ley1562">Ley 1562 de 2012</option>
+                        </select>
+                    </div>
+                </div>    
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Resoluciones">RESOLUCIONES</label>
+                        <select class="form-control" id="Resoluciones">
+                            <option value="">Selecciona una opción</option>
+                            <option value="resolucion2764">Resolucion 2764 de 2022</option>
+                            <option value="reolucion773">Resolucion 773 de 2021</option>
+                            <option value="reolucion0312">Resolucion 0312 de 2019</option>
+                            <option value="reolucion00000652">Resolucion 00000652 de 2012</option>
+                            <option value="reolucion2546">Resolucion 2546 de 2008</option>
+                            <option value="reolucion2346">Resolucion 2346 de 2007</option>
+                            <option value="reolucion1401">Resolucion 1401 de 2007</option>
+                            <option value="reolucion2013">Resolucion 2013 de 1986</option>
+                            <option value="reolucion2400">Resolucion 2400 de 1979</option>
+                        </select>
+                    </div>
+                </div>    
+    <script>
+        // Función para cargar datos desde XML (permanece igual)
+        function cargarDatosDesdeXML(empleadoIndex = 0) {
+            fetch('DatosEmpleados.xml')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data, "application/xml");
+
+                    const empleados = xmlDoc.getElementsByTagName("empleado");
+
+                    if (empleados.length > empleadoIndex) {
+                        const empleado = empleados[empleadoIndex];
+
+                        document.getElementById("nombres").value = empleado.getElementsByTagName("nombres")[0].textContent;
+                        document.getElementById("apellidos").value = empleado.getElementsByTagName("apellidos")[0].textContent;
+                        document.getElementById("numeroDocumento").value = empleado.getElementsByTagName("numeroDocumento")[0].textContent;
+                        document.getElementById("genero").value = empleado.getElementsByTagName("genero")[0].textContent;
+                        document.getElementById("fechaNacimiento").value = empleado.getElementsByTagName("fechaNacimiento")[0].textContent;
+                        document.getElementById("edad").value = empleado.getElementsByTagName("edad")[0].textContent;
+                        document.getElementById("rh").value = empleado.getElementsByTagName("rh")[0].textContent;
+                        document.getElementById("tipoContrato").value = empleado.getElementsByTagName("tipoContrato")[0].textContent;
+                        document.getElementById("profesion").value = empleado.getElementsByTagName("profesion")[0].textContent;
+                        document.getElementById("escolaridad").value = empleado.getElementsByTagName("escolaridad")[0].textContent;
+                        document.getElementById("correoElectronico").value = empleado.getElementsByTagName("correoElectronico")[0].textContent;
+                        document.getElementById("salario").value = empleado.getElementsByTagName("salario")[0].textContent;
+                        document.getElementById("eps").value = empleado.getElementsByTagName("eps")[0].textContent;
+                        document.getElementById("afp").value = empleado.getElementsByTagName("afp")[0].textContent;
+                        document.getElementById("arl").value = empleado.getElementsByTagName("arl")[0].textContent;
+                        document.getElementById("nivelRiesgo").value = empleado.getElementsByTagName("nivelRiesgo")[0].textContent;
+                        document.getElementById("fechaInicio").value = empleado.getElementsByTagName("fechaInicio")[0].textContent;
+                        document.getElementById("pais").value = empleado.getElementsByTagName("pais")[0].textContent;
+                        document.getElementById("ciudad").value = empleado.getElementsByTagName("ciudad")[0].textContent;
+                        document.getElementById("departamento").value = empleado.getElementsByTagName("departamento")[0].textContent;
+                        document.getElementById("direccion").value = empleado.getElementsByTagName("direccion")[0].textContent;
+                        document.getElementById("telefono").value = empleado.getElementsByTagName("telefono")[0].textContent;
+                    } else {
+                        console.error("No hay empleado con el índice proporcionado.");
+                    }
+                })
+                .catch(error => console.error('Error al cargar el archivo XML:', error));
+        }
+    </script>
+</body>
+</html>

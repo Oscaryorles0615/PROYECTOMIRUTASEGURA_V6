@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cargar Datos de Empleados</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('PaginaInicio.png');
+            background-size: cover; /* Hace que la imagen cubra todo el fondo */
+            background-position: center; /* Centra la imagen */
+            background-repeat: no-repeat; /* Evita que la imagen se repita */
+            height: 100vh; /* Ocupa el 100% del viewport */
+            margin: 0; /* Elimina el margen por defecto del body */
+        }
+        
+        /* Estilo para los campos de entrada */
+        .form-control {
+            background-color: #f8f9fa; /* Gris claro */
+        }
+        /* Estilo para las secciones */
+        .section-header {
+            background-color: #e9ecef; /* Color de fondo para secciones */
+            padding: 10px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Botón Regresar en la parte superior derecha -->
+        <div class="d-flex justify-content-end mt-5">
+           <a href="4_PaginaPpal_ok.html" class="btn btn-primary float-right">Regresar</a>
+        </div>
+        <form id="empleadosForm">
+            <div class="row mb-3">
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="nombres">Nombres:</label>
+                        <input type="text" class="form-control" id="nombres">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="apellidos">Apellidos:</label>
+                        <input type="text" class="form-control" id="apellidos">
+                    </div>
+                </div>    
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label>Activo:</label><br>
+                        <label class="switch">
+                            <input type="checkbox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tipoDocumento">Tipo de Identificacion:</label>
+                        <select class="form-control" id="tipoIdentificacion">
+                            <option value="">Selecciona tipo de identificacion</option>
+                            <option value="Ceduladeciudadania">Cedula de Ciudadania</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="numeroDocumento">Numero de Documento</label>
+                        <input type="text" class="form-control" id="numeroDocumento">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fechadeExpedicion">Fecha de Expedicion:</label>
+                        <input type="date" class="form-control" id="fechadeExpedicion">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="lugardeNacimiento">Lugar de Nacimiento</label>
+                        <input type="text" class="form-control" id="lugardeNacimiento">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Edad">Edad</label>
+                        <input type="text" class="form-control" id="Edad">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fechadeNacimiento">Fecha de Nacimiento:</label>
+                        <input type="date" class="form-control" id="fechadeNacimiento">
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="ciudaddeResidencia">Ciudad de Residencia:</label>
+                        <input type="text" class="form-control" id="ciudaddeResidencia">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Direccion">Direccion:</label>
+                        <input type="text" class="form-control" id="Direccion">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Telefono">Telefono:</label>
+                        <input type="text" class="form-control" id="telefono">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="escolaridad">Escolaridad:</label>
+                        <input type="text" class="form-control" id="escolaridad">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="profesion">Profesion:</label>
+                        <input type="text" class="form-control" id="profesion">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="correoElectronico">Correo Electronico:</label>
+                        <input type="text" class="form-control" id="correoElectronico">
+                    </div>
+                </div>
+            
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="salario">Salario:</label>
+                        <input type="text" class="form-control" id="salario">
+                    </div>
+                </div>    
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tipodeContrato">Tipo de Contrato:</label>
+                        <select class="form-control" id="tipodeContrato">
+                            <option value="">Selecciona tipo de Contrato</option>
+                            <option value="Definido">Definido</option>
+                            <option value="Indefinido">Indefinido</option>
+                            <option value="prestaciondeServicios">Prestacion de Servicios</option>
+                        </select>
+                    </div>
+                </div>   
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fechadeContrato">Fecha de Contrato:</label>
+                        <input type="date" class="form-control" id="fechadeContrato">
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="lugardeTrabajo">Lugar de Trabajo:</label>
+                        <input type="text" class="form-control" id="lugardeTrabajo">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="niveldeRiesgo">Nivel de Riesgo:</label>
+                        <select class="form-control" id="niveldeRiesgo">
+                            <option value="">Selecciona una opción</option>
+                            <option value="I">I</option>
+                            <option value="II">II</option>
+                            <option value="III">III</option>
+                            <option value="IV">IV</option>
+                            <option value="V">V</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Cargo">Cargo:</label>
+                        <input type="text" class="form-control" id="cargo">
+                    </div>
+                </div>
+            
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="eps">EPS:</label>
+                        <input type="text" class="form-control" id="eps">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="Arl">ARL:</label>
+                        <input type="text" class="form-control" id="Arl">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="fondodePensiones">Fondo de Pensiones:</label>
+                        <input type="text" class="form-control" id="fondodePensiones">
+                    </div>
+                </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Función para cargar datos desde XML (permanece igual)
+        function cargarDatosDesdeXML(empleadoIndex = 0) {
+            fetch('DatosEmpleados.xml')
+                .then(response => response.text())
+                .then(data => {
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(data, "application/xml");
+
+                    const empleados = xmlDoc.getElementsByTagName("empleado");
+
+                    if (empleados.length > empleadoIndex) {
+                        const empleado = empleados[empleadoIndex];
+
+                        document.getElementById("nombres").value = empleado.getElementsByTagName("nombres")[0].textContent;
+                        document.getElementById("apellidos").value = empleado.getElementsByTagName("apellidos")[0].textContent;
+                        document.getElementById("numeroDocumento").value = empleado.getElementsByTagName("numeroDocumento")[0].textContent;
+                        document.getElementById("genero").value = empleado.getElementsByTagName("genero")[0].textContent;
+                        document.getElementById("fechaNacimiento").value = empleado.getElementsByTagName("fechaNacimiento")[0].textContent;
+                        document.getElementById("edad").value = empleado.getElementsByTagName("edad")[0].textContent;
+                        document.getElementById("rh").value = empleado.getElementsByTagName("rh")[0].textContent;
+                        document.getElementById("tipoContrato").value = empleado.getElementsByTagName("tipoContrato")[0].textContent;
+                        document.getElementById("profesion").value = empleado.getElementsByTagName("profesion")[0].textContent;
+                        document.getElementById("escolaridad").value = empleado.getElementsByTagName("escolaridad")[0].textContent;
+                        document.getElementById("correoElectronico").value = empleado.getElementsByTagName("correoElectronico")[0].textContent;
+                        document.getElementById("salario").value = empleado.getElementsByTagName("salario")[0].textContent;
+                        document.getElementById("eps").value = empleado.getElementsByTagName("eps")[0].textContent;
+                        document.getElementById("afp").value = empleado.getElementsByTagName("afp")[0].textContent;
+                        document.getElementById("arl").value = empleado.getElementsByTagName("arl")[0].textContent;
+                        document.getElementById("nivelRiesgo").value = empleado.getElementsByTagName("nivelRiesgo")[0].textContent;
+                        document.getElementById("fechaInicio").value = empleado.getElementsByTagName("fechaInicio")[0].textContent;
+                        document.getElementById("pais").value = empleado.getElementsByTagName("pais")[0].textContent;
+                        document.getElementById("ciudad").value = empleado.getElementsByTagName("ciudad")[0].textContent;
+                        document.getElementById("departamento").value = empleado.getElementsByTagName("departamento")[0].textContent;
+                        document.getElementById("direccion").value = empleado.getElementsByTagName("direccion")[0].textContent;
+                        document.getElementById("telefono").value = empleado.getElementsByTagName("telefono")[0].textContent;
+                    } else {
+                        console.error("No hay empleado con el índice proporcionado.");
+                    }
+                })
+                .catch(error => console.error('Error al cargar el archivo XML:', error));
+        }
+    </script>
+</body>
+</html>

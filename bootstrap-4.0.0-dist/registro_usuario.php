@@ -43,10 +43,11 @@
 </head>
 <body>
 
-    <form action="" method="POST" class="formulario"></form>
+
     <div class="container register-container shadow-sm">
-        <h5 class="text-center">REGISTRO</h5>
-      
+    <form action="" method="POST" class="formulario">        
+    <h5 class="text-center">REGISTRO</h5>
+        
         <div class="form-row">
             <form class="col-12" id="registerForm">
                 <!-- Campo de Nombre Completo -->
@@ -90,9 +91,13 @@
                     <p><a href="1_Inicio_ok.html">¿Ya tienes cuenta? Iniciar Sesión</a></p>
                 </div>
             </form>
-        </div>   
+        </div>
+    </form>    
     </div>
-</form>  
+
+    <?php
+        include("registro_usuario.php");
+    ?>
 
     <!-- Importando Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
