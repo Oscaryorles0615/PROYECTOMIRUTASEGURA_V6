@@ -1,20 +1,9 @@
-<?php
-
-$servidor = "localhost:3306";
-$usuario = "root";
-$clave = "";
-$bd = "COORDIFRONTERAS";
-
-$enlace = mysqli_connect ($servidor, $usuario, $clave, $bd);
-
-?>
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registrar usuario</title>
+    <title>Registrarse</title>
     <!-- Importando Bootstrap desde CDN -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet">
     <!-- Iconos de Materialize -->
@@ -54,21 +43,20 @@ $enlace = mysqli_connect ($servidor, $usuario, $clave, $bd);
 </head>
 <body>
 
-    <form action="#" name="COORDIFRONTERAS" method="POST">    
     <div class="container register-container shadow-sm">
-        <h5 class="text-center">Registrate</h5>
+        <h5 class="text-center">Registrarse</h5>
         
         <div class="form-row">
             <form class="col-12" id="registerForm">
                 <!-- Campo de Nombre Completo -->
                 <div class="form-group col-12">
-                    <label for="fullname">Nombre</label>
+                    <label for="fullname">Nombre Completo</label>
                     <input id="fullname" type="text" class="form-control" required>
                 </div>
 
                 <!-- Campo de Correo Electrónico -->
                 <div class="form-group col-12">
-                    <label for="email">Correo</label>
+                    <label for="email">Correo Electrónico</label>
                     <input id="email" type="email" class="form-control" required>
                 </div>
 
@@ -87,7 +75,7 @@ $enlace = mysqli_connect ($servidor, $usuario, $clave, $bd);
 
                 <!-- Campo de Confirmación de Contraseña con ícono de ojo -->
                 <div class="form-group col-12">
-                    <label for="confirm-password">ConfirmarContraseña</label>
+                    <label for="confirm-password">Confirmar Contraseña</label>
                     <div class="input-group">
                         <input id="confirm-password" type="password" class="form-control" required>
                         <div class="input-group-append">
@@ -156,27 +144,5 @@ $enlace = mysqli_connect ($servidor, $usuario, $clave, $bd);
             }
         }
     </script>
-    </form>
 </body>
 </html>
-
-<?php
-
-    if(isset($_POST['Registrarse'])){
-
-        $fullname= $_POST ['nombre'];
-        $email= $_POST ['correo'];
-        $password= $_POST ['contraseña'];
-        
-        $insertarDatos = " INSERT INTO REGISTRO VALUES('$fullname','$email','$password')";
-
-
-        $ejecutarInsertar = mysqli_query ($enlace,$insertarDatos);
-
-    }
-
-?>
-
-
-
-
